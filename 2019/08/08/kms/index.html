@@ -124,18 +124,18 @@
 <meta property="og:site_name" content="Ottoli&#39;s Blog">
 <meta property="og:description" content="记录一下搭建 kms 服务器的过程以及 kms 服务器的相关使用……">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565249112072.png">
-<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565250978367.png">
-<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565251334877.png">
-<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565257173416.png">
-<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565256875026.png">
-<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565257077052.png">
-<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565258116295.png">
-<meta property="og:updated_time" content="2019-08-08T10:08:12.797Z">
+<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/1565249112072.png">
+<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/1565250978367.png">
+<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/1565251334877.png">
+<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/1565257173416.png">
+<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/1565256875026.png">
+<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/1565257077052.png">
+<meta property="og:image" content="http://ottoli09.github.io/2019/08/08/kms/1565258116295.png">
+<meta property="og:updated_time" content="2019-08-08T10:13:58.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kms服务器的搭建及使用">
 <meta name="twitter:description" content="记录一下搭建 kms 服务器的过程以及 kms 服务器的相关使用……">
-<meta name="twitter:image" content="http://ottoli09.github.io/2019/08/08/kms/Blog/source/_posts/kms/1565249112072.png">
+<meta name="twitter:image" content="http://ottoli09.github.io/2019/08/08/kms/1565249112072.png">
 
 
 
@@ -406,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2019-08-08 14:15:17 / 修改时间：18:08:12" itemprop="dateCreated datePublished" datetime="2019-08-08T14:15:17+08:00">2019-08-08</time>
+              <time title="创建时间：2019-08-08 14:15:17 / 修改时间：18:13:58" itemprop="dateCreated datePublished" datetime="2019-08-08T14:15:17+08:00">2019-08-08</time>
             
 
             
@@ -554,7 +554,7 @@
 <p>我有一个小鸡服务器，挂了一个小破站，平时负载也不大，kms 就挂到它身上吧。</p>
 <p>首先查看一下服务器 CPU 架构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/08/08/kms/Blog\source\_posts\kms\1565249112072.png" alt="1565249112072"></p>
+<p><img src="/2019/08/08/kms/1565249112072.png" alt="1565249112072"></p>
 <p>嗯，是 Intel 没错了，一般都是 intel</p>
 <p>然后下载 vlmcsd 项目文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget </span><br><span class="line">wget https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz</span><br></pre></td></tr></table></figure>
@@ -574,19 +574,19 @@
 <p>这时应该就已经配置完成了，可以查看一下 vlmcsd 的运行情况：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep vlmcsd-x64-musl-static</span><br></pre></td></tr></table></figure>
 <p>看到类似如下情况，说明运行正常：</p>
-<p><img src="/2019/08/08/kms/Blog\source\_posts\kms\1565250978367.png" alt="1565250978367"></p>
+<p><img src="/2019/08/08/kms/1565250978367.png" alt="1565250978367"></p>
 <p>如需关闭 vlmcsd，则输入命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 上图使用psef命令回显的vlmcsd进程ID</span><br></pre></td></tr></table></figure>
 <p>最后需要注意的是，vlmcsd 需要使用1688端口，注意开放端口。</p>
 <h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>为了优雅地使用kms服务器，绑定域名是必不可少的，只需要将想要绑定的域名解析到服务器ip就行了。</p>
 <p>在域名解析记录中添加一个A类记录，记录值填写服务器ip，不需要写端口号，我绑定的域名是 <a href="https://kms.ottoli.cn" target="_blank" rel="noopener">kms.ottoli.cn</a> （如图）</p>
-<p><img src="/2019/08/08/kms/Blog\source\_posts\kms\1565251334877.png" alt="1565251334877"></p>
+<p><img src="/2019/08/08/kms/1565251334877.png" alt="1565251334877"></p>
 <p>此时使用 kms.ottoli.cn 就可以激活软件了，但是如果直接在浏览器中访问这个地址，会提示无法访问，有点难受。</p>
 <p>于是在服务器建个页面，留了行字，hh。</p>
 <h1 id="KMS-服务器的使用"><a href="#KMS-服务器的使用" class="headerlink" title="KMS 服务器的使用"></a>KMS 服务器的使用</h1><h2 id="激活-Windows"><a href="#激活-Windows" class="headerlink" title="激活 Windows"></a>激活 Windows</h2><p>首先，目前的 Windows 必须是 VL 版本才可以使用 kms 激活，如果不是 VL 版本，则需要更换密钥。</p>
 <p>在 cmd 中运行以下命令查看系统版本：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic os get caption</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/08/08/kms/Blog\source\_posts\kms\1565257173416.png" alt="1565257173416"></p>
+<p><img src="/2019/08/08/kms/1565257173416.png" alt="1565257173416"></p>
 <p>在下面列表中找到对应的KEY：</p>
 <details><summary><font color="red">点击打开列表</font></summary>
 <table><tr><th>操作系统</th><th>KMS 激活序列号
@@ -687,11 +687,11 @@
 <p>更换许可证书的命令是：<small><em>其中 value 参数为 .xrm-ms 许可证路径</em></small></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ospp.vbs /inslic:value</span><br></pre></td></tr></table></figure>
 <p>在 <code>C:\Program Files\Microsoft Office\root\Licenses16</code> 目录中有各种 Office 套件以及 Word、Excel 等单个组件的各种版本的证书，搜索 <code>kms</code> 就可以找到所有批量版本的证书。</p>
-<p><img src="/2019/08/08/kms/Blog\source\_posts\kms\1565256875026.png" alt="1565256875026"></p>
+<p><img src="/2019/08/08/kms/1565256875026.png" alt="1565256875026"></p>
 <p>手动安装证书很麻烦，不推荐</p>
 <p>推荐使用 <a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener">Office Tool Plus</a> 工具（简称 otp）</p>
 <p>打开 otp 的激活选项卡，在 <code>证书管理</code> 一栏中选择带有 Volume 的证书，就是批量版本</p>
-<p><img src="/2019/08/08/kms/Blog\source\_posts\kms\1565257077052.png" alt="1565257077052"></p>
+<p><img src="/2019/08/08/kms/1565257077052.png" alt="1565257077052"></p>
 <p>安装好证书后，在下方列表中找到相应 KEY ：</p>
 <details><summary><font color="red">点击打开列表</font></summary>
 <table><tr><th>版本</th><th>KMS 密钥</th></tr>
@@ -766,7 +766,7 @@ Word 2010</td><td>HVHB3-C6FV7-KQX9W-YQG79-CRY7T</td></tr></table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cscript &quot;ospp.vbs&quot; /inpkey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX(KMS 密钥)</span><br><span class="line">cscript &quot;ospp.vbs&quot; /sethst:kms.ottoli.cn(KMS 服务器地址)</span><br><span class="line">cscript &quot;ospp.vbs&quot; /act</span><br></pre></td></tr></table></figure>
 <p>这样 Office 就激活完毕了，期限是180天，到期后自动续订，不需要人工干预。</p>
 <p>不过，既然已经安装了 otp，以上三条命令也可以用 otp 来实现：</p>
-<p><img src="/2019/08/08/kms/Blog\source\_posts\kms\1565258116295.png" alt="1565258116295"></p>
+<p><img src="/2019/08/08/kms/1565258116295.png" alt="1565258116295"></p>
 <p>另，可以用这个命令查询已安装的许可证：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cscript &quot;ospp.vbs&quot; /dstatus</span><br></pre></td></tr></table></figure>
 <p>用这个命令删除已安装的许可证：<small><em>其中xxxxx为要卸载的许可证后五位</em></small></p>
